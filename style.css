@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400&family=Montserrat:wght@400&family=Poppins:wght@400&family=Open+Sans:wght@400&family=Raleway:wght@400&family=Nunito+Sans:wght@400&family=Source+Sans+Pro:wght@400&display=swap');
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #e74c3c;
+    --accent-color: #2ecc71;
+    --text-color: #333;
+    --background-color: #f4f4f4;
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #cacaca; /* Updated main text color */
+    background-color: var(--background-color);
+    overflow-x: hidden;
+}
+
+.background-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://source.unsplash.com/1920x1080/?abstract,pattern");
+    z-index: -1;
+    opacity: 0.1;
+}
+
+header {
+    background-color: rgba(36, 36, 36, 0.836);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+    font-size: 15px;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+.parallax-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#home {
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), /* Ensure gradient is on top */
+        url("https://images.unsplash.com/photo-1687463221023-02f259da7d77?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center/cover;
+    
+    height: 900px; /* Set a height for the container */
+    width: 100%; /* Set a width or adjust as needed */
+}
+
+.scrolling-text {
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow */
+    width: 100%; /* Full width */
+    animation: scroll 10s linear infinite; /* Adjust duration as needed */
+    color: #ff5733; /* Text color */
+    font-size: 1.5rem; /* Adjust size as needed */
+    text-align: center; /* Center the text */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%); /* Start off-screen to the right */
+    }
+    100% {
+        transform: translateX(-100%); /* End off-screen to the left */
+    }
+}
+
+.content {
+    background-color: rgb(55, 55, 55);
+    padding: 10rem;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* max-width: 1200px; */
+    width: 100%;
+}
+
+#about p {
+    font-size: 25px; /* Adjust font size */
+    line-height: 1.8; /* Adjust line spacing */
+    color: #cacaca; /* Text color */
+    text-align: justify; /* Justify text */
+    margin-top: 20px; /* Add space above the paragraph */
+}
+
+
+h1, h2 {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 1rem;
+    font-size: 80px;
+    color: #cacaca;
+    text-align: center; /* Ensure left alignment */
+    font-weight: 300;
+}
+
+#about .content h2 {
+    font-family: 'Nunito Sans', sans-serif;
+    margin-bottom: 1rem;
+    font-size: 80px;
+    color: var(--primary-color);;
+    text-align: center; /* Ensure left alignment */
+    font-weight: 700;
+}
+
+
+#projects h2 {
+    font-family: 'Nunito Sans', sans-serif;
+    margin-bottom: 1rem;
+    padding-top: 4rem;
+    font-size: 80px;
+    color: var(--primary-color);;
+    text-align: center; /* Ensure left alignment */
+    font-weight: 700;
+}
+
+#contact .content h2 {
+    font-family: 'Nunito Sans', sans-serif;
+    margin-bottom: 1rem;
+    font-size: 80px;
+    color: var(--primary-color);;
+    text-align: center; /* Ensure left alignment */
+    font-weight: 700;
+}
+
+
+h1 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 80px; /* Adjust font size for the main heading */
+    text-align: center; /* Center the text */
+    font-weight: 800;
+}
+
+.myname {
+    color: #ff5733; /* This would make it a shade of orange */
+}
+
+.project-list {
+    display: grid; /* Change to grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); /* Responsive grid */
+    gap: 1rem; /* Space between cards */
+    padding: 1rem; /* Add padding around the grid */
+}
+
+.project-card {
+    background-color: #444; /* Background color for project cards */
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px; /* Adjust this value to increase height */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background color and text */
+}
+
+.project-card:hover {
+    background-color: var(--accent-color); /* Change to accent color on hover */
+}
+
+.card-content {
+    color: #cacaca; /* Text color */
+}
+
+.card-content h4 {
+    font-weight: bold; /* Bold title */
+    margin-bottom: 0.5rem;
+    font-size:30px;
+}
+
+.card-content p {
+    color: #888; /* Grey info text */
+    margin: 0; /* Reset margin */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.8); }
+    to { transform: scale(1); }
+}
+
+.animate-text {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.fade-in { animation-name: fadeIn; }
+.scale-up { animation-name: scaleUp; }
+
+.heading-container {
+    text-align: center; /* Center the entire container */
+    margin-top: 20px; /* Add spacing above if needed */
+}
+
+.scrolling-text {
+    font-family: 'Roboto Mono', monospace;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow */
+    width: 100%; /* Full width */
+    animation: scroll 32s linear infinite; /* Adjust duration as needed */
+    color: #d4d4d4; /* Text color */
+    font-size: 1.7rem; /* Adjust size as needed */
+    margin-top: 30px; /* Space between heading and scrolling text */
+    font-weight: bold;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center; /* Center the links */
+    gap: 1.5rem; /* Space between links */
+    margin-top: 20px; /* Space above links */
+}
+
+.social-link {
+    text-decoration: none; /* Remove underline */
+    color: #bcbcbc; /* Icon color */
+    font-size: 24px; /* Icon size */
+    transition: color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.social-link:hover {
+    color: var(--accent-color); /* Change color on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.languages {
+    margin-top: auto; /* Push languages to the bottom */
+    display: flex; /* Flexbox to align languages */
+    gap: 10px; /* Space between icons */
+}
+
+.languages i,
+.languages img {
+    width: 20px; /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
+    filter: brightness(0) invert(1); /* Default to white */
+    transition: filter 0.3s ease; /* Smooth transition for filter change */
+}
+
+.project-card:hover .languages i,
+.project-card:hover .languages img {
+    filter: brightness(0) invert(0); /* Change to black on hover */
+}
+
+/* Accent colors for each language */
+.python {
+    color: #007acc; /* Blue */
+}
+
+.javascript {
+    color: #f0db4f; /* Yellow */
+}
+
+.java {
+    color: #ff7f50; /* Red */
+}
+
+.c {
+    color: #5cb85c; /* Green */
+}
+
+.csharp {
+    color: #00e859; /* Dark Red for C# */
+}
+
+.node {
+    color: #00e85959;
+}
+
+.react {
+    color: #0f97ff59;
+}
+
+.express {
+    color: #cd000059;
+}
+
+.mongodb {
+    color: #00d54459;
+}
+
+.project-card:hover .card-content {
+    color: #000; /* Change to black on hover */
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    backdrop-filter: blur(10px); /* Blurred background */
+    justify-content: center;
+    align-items: center;
+    animation: fadeInModal 0.3s ease-in-out;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background-color: #222; /* Dark background */
+    padding: 2rem;
+    border-radius: 8px;
+    width: 60%;
+    max-width: 700px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-image-viewer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.modal-image-viewer img {
+    max-width: 800px;
+    max-height: 400px;
+    border-radius: 10px;
+}
+
+.modal-image-viewer .prev, 
+.modal-image-viewer .next {
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.modal-project-title {
+    color: #d7d7d7; /* Accent color */
+    font-size: 28px;
+    margin-bottom: 0.5rem;
+}
+
+.modal-project-description {
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.github-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.github-button:hover {
+    background-color: var(--accent-color);
+}
+
+.github-link {
+    text-decoration: none;
+}
+
+
