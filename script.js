@@ -64,12 +64,21 @@ const projects = [
         ]
     },
     {
+        title: "Sierpiński Triangle Fractal Simulation",
+        description: "An interactive simulation of Sierpiński Triangle (Mathematical Fractal Pattern) built on python using pygame",
+        github: "https://github.com/Sid00867/fractal",
+        images: [
+            "./images/pf1.jpg",
+            "./images/pf2.jpg"
+        ]
+    },
+    {
         title: "ToDoList App",
         description: "An app created in Android Studio using Java.",
         github: "https://github.com/Sid00867/todolist",
         images: [
             "./images/dn1.jpg",
-            "./images/dn2.jpg"
+            "./images/dn2.jpg"  
         ]
     }
 ];
