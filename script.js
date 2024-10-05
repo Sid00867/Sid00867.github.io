@@ -80,6 +80,15 @@ const projects = [
             "./images/dn1.jpg",
             "./images/dn2.jpg"  
         ]
+    },
+    {
+        title: "Student Fail/Pass Predictor",
+        description: "A machine learning model that predicts whether a student will pass or fail based on their academic performance, specifically their grades in various subjects, study time, past failures, and absenteeism",
+        github: "https://github.com/Sid00867/Student-Pass-Fail-Predictor",
+        images: [
+            "./images/sp1.jpg",
+            "./images/sp2.jpg"  
+        ]
     }
 ];
 
